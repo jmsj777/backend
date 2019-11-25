@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hortela Home</title>
+  </head>
+  <body>
+    <h1>
+      this is the home to the Hortela api,
+      <br />
+      there is no data to retrieve from this path
+    </h1>
+
+    routes: <br />
+    GET: <br />
+    '/hortela/order', $_POST['name'], $_POST['nomeProd'], $_POST['cliente'],
+    $_POST['dataPedido'], $_POST['dataMarcada']
+
+    <form action="hortela/order" method="post">
+      <input type="text" name="name" id="name" placeholder="name" />
+      <input type="text" name="nomeProd" id="nomeProd" placeholder="nomeProd" />
+      <input type="text" name="cliente" id="cliente" placeholder="cliente" />
+      <input
+        type="datetime"
+        name="dataPedido"
+        id="dataPedido"
+        placeholder="dataPedido"
+      />
+      <input
+        type="datetime"
+        name="dataMarcada"
+        id="dataMarcada"
+        placeholder="dataMarcada"
+      />
+      <button type="submit">Post!</button>
+    </form>
+  </body>
+</html>

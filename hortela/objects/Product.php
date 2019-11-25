@@ -2,7 +2,7 @@
 class Product{
  
   // database connection and table name
-  private $conn;
+  private $connection;
   private $table_name = "produto";
 
   // object properties
@@ -13,7 +13,7 @@ class Product{
   
   // constructor with $db as database connection
   public function __construct($db){
-    $this->conn = $db;
+    $this->connection = $db;
   }
 
   // read products
@@ -28,7 +28,7 @@ class Product{
                 p.nome DESC";
 
     // prepare query statement
-    $stmt = $this->conn->prepare($query);
+    $stmt = $this->connection->prepare($query);
 
     // execute query
     $stmt->execute();
@@ -47,7 +47,7 @@ class Product{
               LIMIT 0,1";
 
     // prepare query statement
-    $stmt = $this->conn->prepare( $query );
+    $stmt = $this->connection->prepare( $query );
 
     // bind id of product to be updated
     $stmt->bindParam(1, $this->id);
@@ -80,7 +80,7 @@ class Product{
               ;";
 
     // prepare query
-    $stmt = $this->conn->prepare($query);
+    $stmt = $this->connection->prepare($query);
     
     // bind values - I took it off because the new paradigm can do it better!
     // $stmt->bindParam(":nome", $this->nome);
@@ -228,4 +228,3 @@ class Product{
     return $stmt;
   }
 }
-?>
